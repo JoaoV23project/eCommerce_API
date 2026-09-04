@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce SENAI - Estoque</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <script src="../js/estoque.js"></script>
+</head>
+
+<body>
+    <!--navbar-->
+    <section>
+        <nav>
+            <h1>Estoques</h1>
+            <h3 class="navBarBtn" onclick="abrir('produto')">Produtos</h3>
+            <h3 class="navBarBtn" onclick="abrir('cliente')">Clientes</h3>
+            <h3 class="navBarBtn" onclick="abrir('funcionario')">Funcionários</h3>
+            <h3 class="navBarBtn" onclick="abrir('../../index')">Home</h3>
+            <h3 class="navBarBtn" onclick="abrir('atendimento')">Atendimentos</h3>
+            <h3 class="navBarBtn" onclick="abrir('email')">Emails</h3>
+            <h3 class="navBarBtn" onclick="abrir('telefone')">Telefones</h3>
+            <h3 class="navBarBtn" onclick="abrir('compra')">Compras</h3>
+            <h3 class="navBarBtn" onclick="abrir('relatorio')">Relatórios</h3>
+        </nav>
+    </section>
+    <!--main-->
+    <section>
+        <main>
+            <form>
+                <input type="number" name="id" id="id" class="inputMain" value="0" style="display: none;">
+                <label for="funcionarioID" class="labelMain">ID Funcionário:</label>
+                <input type="number" name="funcionarioID" id="funcionarioID" class="inputMain" min="1" step="1">
+                <label for="produtoID" class="labelMain">ID Produto:</label>
+                <input type="number" name="produtoID" id="produtoID" class="inputMain" min="1" step="1">
+                <label for="quantidade" class="labelMain">Quantidade de produtos:</label>
+                <input type="number" step="1" min="1" name="quantidade" id="quantidade" class="inputMain">
+                <button id="btnSalvar" onclick="salvar()">Salvar</button>
+                <button id="btnSalvar" onclick="gerarPDF('Estoque')">Imprimir</button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js" integrity="sha512-+9GoO5OUX2MmPRHUH5dnOY+KGReMLcxywEvQxvAI0y5JxXh/lkz99dKj4xdYfODP3dMFsoZRz4CF/vHcaqa2Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            </form>
+            <table id="pdf">
+                <thead>
+                    <tr>
+                        <th>ID Estoque</th>
+                        <th>ID Funcionário</th>
+                        <th>ID Produto</th>
+                        <th>Quantidade</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo">
+                    <!-- Dados carregados via JS -->
+                </tbody>
+            </table>
+        </main>
+    </section>
+</body>
+
+</html>

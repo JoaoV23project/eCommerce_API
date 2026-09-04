@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce SENAI - Funcionário</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <script src="../js/funcionario.js"></script>
+</head>
+
+<body>
+    <!--navbar-->
+    <section>
+        <nav>
+            <h1>Funcionários</h1>
+            <h3 class="navBarBtn" onclick="abrir('produto')">Produtos</h3>
+            <h3 class="navBarBtn" onclick="abrir('cliente')">Clientes</h3>
+            <h3 class="navBarBtn" onclick="abrir('../../index')">Home</h3>
+            <h3 class="navBarBtn" onclick="abrir('estoque')">Estoques</h3>
+            <h3 class="navBarBtn" onclick="abrir('atendimento')">Atendimentos</h3>
+            <h3 class="navBarBtn" onclick="abrir('email')">Emails</h3>
+            <h3 class="navBarBtn" onclick="abrir('telefone')">Telefones</h3>
+            <h3 class="navBarBtn" onclick="abrir('compra')">Compras</h3>
+            <h3 class="navBarBtn" onclick="abrir('relatorio')">Relatórios</h3>
+        </nav>
+    </section>
+    <!--main-->
+    <section>
+        <main>
+            <form>
+                <input type="number" name="id" id="id" class="inputMain" value="0" style="display: none;">
+                <label for="nome" class="labelMain">Nome:</label>
+                <input type="text" name="nome" id="nome" class="inputMain">
+                <label for="cargo" class="labelMain">Cargo:</label>
+                <input type="text" name="cargo" id="cargo" class="inputMain">
+                <label for="salario" class="labelMain">Salário:</label>
+                <input type="number" step="0.01" min="0.01" name="salario" id="salario" class="inputMain">
+                <label for="dia" class="labelMain">Dia da contratação:</label>
+                <input type="number" name="dia" id="dia" min="1" max="31" step="1" class="inputMain">
+                <label for="mes" class="labelMain">Mês da contratação:</label>
+                <input type="number" name="mes" id="mes" min="1" max="12" step="1" class="inputMain">
+                <label for="ano" class="labelMain">Ano da contratação:</label>
+                <input type="number" name="ano" id="ano" min="1900" step="1" class="inputMain">
+                <button id="btnSalvar" onclick="salvar()">Salvar</button>
+                <button id="btnSalvar" onclick="gerarPDF('Funcionários')">Imprimir</button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js" integrity="sha512-+9GoO5OUX2MmPRHUH5dnOY+KGReMLcxywEvQxvAI0y5JxXh/lkz99dKj4xdYfODP3dMFsoZRz4CF/vHcaqa2Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            </form>
+            <table id="pdf">
+                <thead>
+                    <tr>
+                        <th>ID Funcionário</th>
+                        <th>Nome</th>
+                        <th>Cargo</th>
+                        <th>Salário</th>
+                        <th>Data da contratação</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo">
+                    <!-- Dados carregados via JS -->
+                </tbody>
+            </table>
+        </main>
+    </section>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCommerce SENAI - Relatórios</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/script.js"></script>
+    <script src="../js/relatorios.js"></script>
+</head>
+
+<body>
+    <!--navbar-->
+    <section>
+        <nav>
+            <h1>Relatórios</h1>
+            <h3 class="navBarBtn" onclick="abrir('produto')">Produtos</h3>
+            <h3 class="navBarBtn" onclick="abrir('cliente')">Clientes</h3>
+            <h3 class="navBarBtn" onclick="abrir('funcionario')">Funcionários</h3>
+            <h3 class="navBarBtn" onclick="abrir('estoque')">Estoques</h3>
+            <h3 class="navBarBtn" onclick="abrir('atendimento')">Atendimentos</h3>
+            <h3 class="navBarBtn" onclick="abrir('email')">Emails</h3>
+            <h3 class="navBarBtn" onclick="abrir('telefone')">Telefones</h3>
+            <h3 class="navBarBtn" onclick="abrir('compra')">Compras</h3>
+            <h3 class="navBarBtn" onclick="abrir('../../index')">Home</h3>
+        </nav>
+    </section>
+    <section>
+        <main>
+            <form>
+                <button type="button" id="btnSalvar" onclick="buscarClientes_Email()">Buscar Clientes - Email</button>
+                <button type="button" id="btnSalvar" onclick="buscarProdutos_Quantidade()">Buscar Produtos - Quantidade</button>
+                <button type="button" id="btnSalvar" onclick="buscarClientes_Atendimento()">Buscar Clientes - Atendimento</button>
+                <button type="button" id="btnSalvar" onclick="buscarMediaSalarial()">Buscar Média salárial</button>
+                <button type="button" id="btnSalvar" onclick="buscarProdutos_Preco_Estoque()">Buscar Preço dos Produtos no Estoque</button>
+                <button type="button" id="btnSalvar" onclick="buscarClientes_Telefone()">Buscar Clientes - Telefone</button>
+                <button type="button" id="btnSalvar" onclick="buscarFuncionarios_Atendimento()">Buscar Funcionários - Atendimento</button>
+                <button type="button" id="btnSalvar" onclick="buscarClientes_TotalGasto()">Buscar Clientes - Total Gasto</button>
+                <button type="button" id="btnSalvar" onclick="buscarFuncionarios_Estoque()">Buscar Funcionários - Estoque</button>
+                <button type="button" id="btnSalvar" onclick="gerarPDF('Relatórios')">Imprimir</button>
+                <button type="button" id="btnSalvar" onclick="apagar()">Apagar Relatório</button>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.14.0/html2pdf.bundle.min.js" integrity="sha512-+9GoO5OUX2MmPRHUH5dnOY+KGReMLcxywEvQxvAI0y5JxXh/lkz99dKj4xdYfODP3dMFsoZRz4CF/vHcaqa2Ag==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            </form>
+            <table id="pdf">
+            </table>
+        </main>
+    </section>
+</body>
+
+</html>
